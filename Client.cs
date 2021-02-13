@@ -34,18 +34,17 @@ namespace WebShop
             this.address = address;
         }
 
-        public void SetBirthday(DateTime birthday)
+        public DateTime Birthday
         {
-            if (birthday > DateTime.Now)
+            get { return birthday; }
+            set
             {
-                throw new Exception("Invalid birthday");
+                if (birthday > DateTime.Now)
+                {
+                    throw new Exception("Invalid birthday");
+                }
+                birthday = value;
             }
-            this.birthday = birthday;
-        }
-
-        public DateTime GetBirthday()
-        {
-            return birthday;
         }
 
         public void Print()
