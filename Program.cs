@@ -9,7 +9,11 @@ namespace WebShop
             Console.WriteLine("\t=== WebShop ===\n");
 
             var client1 = NewClient();
-            client1.Print();
+
+            HomeDelivery homeDelivery = new HomeDelivery();
+
+            homeDelivery.Address = client1.Address;
+            homeDelivery.Run();
         }
 
         static Client NewClient()
