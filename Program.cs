@@ -8,15 +8,26 @@ namespace WebShop
         {
             Console.WriteLine("\t=== WebShop ===\n");
 
-            var client1 = GetClient();
-            client1.Birthday = DateTime.Parse("18.02.1983");
+            var client1 = NewClient();
             client1.Print();
         }
 
-        static Client GetClient()
+        static Client NewClient()
         {
-            var client = new Client("Vladimir", "+7(900)528-96-08", "Kirovo-Chepetsk");
-            client.id = Guid.NewGuid();
+            var client = new Client();
+
+            client.Id = Guid.NewGuid();
+
+            Console.WriteLine("Добро пожаловать!");
+
+            Console.Write("Введите своё имя: ");
+            client.Name = Console.ReadLine();
+
+            Console.Write("Введите номер телефона: ");
+            client.PhoneNumber = Console.ReadLine();
+
+            Console.Write("Введите свой адрес: ");
+            client.Address = Console.ReadLine();
 
             return client;
         }
