@@ -9,7 +9,7 @@ namespace WebShop
             Console.WriteLine("\t=== WebShop ===\n");
 
             var client1 = GetClient();
-            client1.SetBirthday(DateTime.Parse("18.02.1983"));
+            client1.Birthday = DateTime.Parse("18.02.1983");
             client1.Print();
         }
 
