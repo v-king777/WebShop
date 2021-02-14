@@ -6,7 +6,14 @@ namespace WebShop
 {
     class Catalog
     {
-        public static object[] GetCatalog()
+        private Product[] content = GetCatalog();
+
+        public Product[] Content
+        {
+            get { return content; }
+        }
+
+        private static Product[] GetCatalog()
         {
             List<Product> products = new List<Product>();
 
@@ -17,8 +24,8 @@ namespace WebShop
             products.Add(new Product("Синтезатор", 100000, ""));
             products.Add(new Product("Говнакусок", 1, "Самый обыкновенный кусок говна"));
 
-            object[] catalog = products.ToArray();
-            
+            Product[] catalog = products.ToArray();
+
             return catalog;
         }
 
