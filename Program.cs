@@ -11,9 +11,16 @@ namespace WebShop
             var client1 = NewClient();
 
             HomeDelivery homeDelivery = new HomeDelivery();
-
             homeDelivery.Address = client1.Address;
             homeDelivery.Run();
+
+            //PickPointDelivery pickPointDelivery = new PickPointDelivery();
+            //pickPointDelivery.Address = client1.Address;
+            //pickPointDelivery.Run();
+
+            //ShopDelivery shopDelivery = new ShopDelivery();
+            //shopDelivery.Address = client1.Address;
+            //shopDelivery.Run();
         }
 
         static Client NewClient()
@@ -35,5 +42,6 @@ namespace WebShop
 
             return client;
         }
+
     }
 }
