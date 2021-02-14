@@ -8,11 +8,18 @@ namespace WebShop
         {
             Console.WriteLine("\t=== WebShop ===\n");
 
-            var client1 = NewClient();
+            var client1 = Client.NewClient();
+            var catalog = Catalog.GetCatalog();
 
-            HomeDelivery homeDelivery = new HomeDelivery();
-            homeDelivery.Address = client1.Address;
-            homeDelivery.Run();
+            Console.WriteLine(catalog);
+
+            //client1.Print();
+
+            //Catalog.ViewCatalog();
+
+            //HomeDelivery homeDelivery = new HomeDelivery();
+            //homeDelivery.Address = client1.Address;
+            //homeDelivery.Run();
 
             //PickPointDelivery pickPointDelivery = new PickPointDelivery();
             //pickPointDelivery.Address = client1.Address;
@@ -23,25 +30,7 @@ namespace WebShop
             //shopDelivery.Run();
         }
 
-        static Client NewClient()
-        {
-            var client = new Client();
-
-            client.Id = Guid.NewGuid();
-
-            Console.WriteLine("Добро пожаловать!");
-
-            Console.Write("Введите своё имя: ");
-            client.Name = Console.ReadLine();
-
-            Console.Write("Введите номер телефона: ");
-            client.PhoneNumber = Console.ReadLine();
-
-            Console.Write("Введите свой адрес: ");
-            client.Address = Console.ReadLine();
-
-            return client;
-        }
+        
 
     }
 }
