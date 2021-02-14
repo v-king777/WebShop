@@ -14,22 +14,24 @@ namespace WebShop
         {
             if (name == "" || name.Contains(" "))
             {
-                Console.WriteLine("Invalid name");
+                throw new Exception("Invalid name");
             }
-            else if (price <= 0)
+            
+            if (price <= 0)
             {
-                Console.WriteLine("Invalid price");
+                throw new Exception("Invalid price");
             }
-            else if (description == "")
+            
+            if (description == "")
             {
-                Console.WriteLine("No description");
+                this.description = "No description";
             }
             else
             {
-                this.name = name;
-                this.price = price;
                 this.description = description;
             }
+            this.name = name;
+            this.price = price;
         }
 
         public string Description
