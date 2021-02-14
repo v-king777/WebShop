@@ -7,10 +7,10 @@ namespace WebShop
     class Product
     {
         private string name;
-        private int price;
+        private double price;
         private string description;
 
-        public Product(string name, int price, string description)
+        public Product(string name, double price, string description)
         {
             if (name == "" || name.Contains(" "))
             {
@@ -39,7 +39,7 @@ namespace WebShop
             get { return description; }
         }
 
-        public int Price
+        public double Price
         {
             get { return price; }
         }
