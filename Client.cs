@@ -65,8 +65,29 @@ namespace WebShop
             }
         }
 
+        public static Client NewClient()
+        {
+            var client = new Client();
+
+            client.Id = Guid.NewGuid();
+
+            Console.WriteLine("Добро пожаловать!");
+
+            Console.Write("Введите своё имя: ");
+            client.Name = Console.ReadLine();
+
+            Console.Write("Введите номер телефона: ");
+            client.PhoneNumber = Console.ReadLine();
+
+            Console.Write("Введите свой адрес: ");
+            client.Address = Console.ReadLine();
+
+            return client;
+        }
+
         public void Print()
         {
+            Console.WriteLine("\n\t< Информация о клиенте >\n");
             Console.WriteLine("Id: " + id);
             Console.WriteLine("Name: " + name);
             Console.WriteLine("PhoneNumber: " + phoneNumber);
