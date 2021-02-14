@@ -9,9 +9,14 @@ namespace WebShop
             Console.WriteLine("\t=== WebShop ===\n");
 
             var client1 = Client.NewClient();
-            var catalog = Catalog.GetCatalog();
 
-            Console.WriteLine(catalog);
+            Catalog catalog = new Catalog();
+            var catalogContent = catalog.Content;
+            Console.WriteLine(catalogContent[0].Name);
+
+            Basket basket = new Basket();
+            var basketContent = basket.Content;
+            Console.WriteLine(basketContent[0].Name);
 
             //client1.Print();
 
@@ -29,8 +34,5 @@ namespace WebShop
             //shopDelivery.Address = client1.Address;
             //shopDelivery.Run();
         }
-
-        
-
     }
 }
