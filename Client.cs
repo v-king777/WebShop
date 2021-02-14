@@ -24,9 +24,12 @@ namespace WebShop
             {
                 if (value == "" || value.Contains(" "))
                 {
-                    throw new Exception("Invalid name");
+                    Console.WriteLine("Invalid name");
                 }
-                name = value;
+                else
+                {
+                    name = value;
+                }
             }
         }
 
@@ -37,9 +40,12 @@ namespace WebShop
             {
                 if (value == "" || value.Contains(" "))
                 {
-                    throw new Exception("Invalid phoneNumber");
+                    Console.WriteLine("Invalid phoneNumber");
                 }
-                phoneNumber = value;
+                else
+                {
+                    phoneNumber = value;
+                }
             }
         }
 
@@ -50,9 +56,12 @@ namespace WebShop
             {
                 if (value == "" || value.Contains(" "))
                 {
-                    throw new Exception("Invalid address");
+                    Console.WriteLine("Invalid address");
                 }
-                address = value;
+                else
+                {
+                    address = value;
+                }
             }
         }
 
