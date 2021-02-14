@@ -7,18 +7,14 @@ namespace WebShop
     abstract class Delivery
     {
         public string Address { get; set; }
-        public virtual void Run()
-        {
-            Console.Write("Выполняется доставка ");
-        }
+        public abstract void Run();
     }
 
     class HomeDelivery : Delivery
     {
         public override void Run()
         {
-            base.Run();
-            Console.WriteLine("на дом по адресу: " + Address);
+            Console.WriteLine("Выполняется доставка на дом по адресу: " + Address);
         }
     }
 
@@ -26,8 +22,7 @@ namespace WebShop
     {
         public override void Run()
         {
-            base.Run();
-            Console.WriteLine("в пункт выдачи по адресу: " + Address);
+            Console.WriteLine("Выполняется доставка в пункт выдачи по адресу: " + Address);
         }
     }
 
@@ -35,8 +30,7 @@ namespace WebShop
     {
         public override void Run()
         {
-            base.Run();
-            Console.WriteLine("в магазин по адресу: " + Address);
+            Console.WriteLine("Выполняется доставка в магазин по адресу: " + Address);
         }
     }
 }
