@@ -14,6 +14,8 @@ namespace WebShop
 
             Basket basket = new Basket(catalog.Products);
 
+            basket.ProductAdd(0);
+
             //client1.Print();
 
             //Catalog.ViewCatalog();
