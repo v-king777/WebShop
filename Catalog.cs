@@ -6,25 +6,25 @@ namespace WebShop
 {
     class Catalog
     {
-        private Product[] content = GetCatalog();
+        private Product[] products = GetCatalog();
 
-        public Product[] Content
+        public Product[] Products
         {
-            get { return content; }
+            get { return products; }
         }
 
         private static Product[] GetCatalog()
         {
-            List<Product> products = new List<Product>();
+            List<Product> list = new List<Product>();
 
-            products.Add(new Product("Пылесос", 15000, "Очень мощный пылесос"));
-            products.Add(new Product("Холодильник", 30000, "Очень большой холодильник"));
-            products.Add(new Product("Диван", 40000, "Очень мягкий диван"));
-            products.Add(new Product("Телевизор", 50000, "Очень крутой телевизор"));
-            products.Add(new Product("Синтезатор", 100000, ""));
-            products.Add(new Product("Говнакусок", 1, "Самый обыкновенный кусок говна"));
+            list.Add(new Product("Пылесос", 15000, "Очень мощный пылесос"));
+            list.Add(new Product("Холодильник", 30000, "Очень большой холодильник"));
+            list.Add(new Product("Диван", 40000, "Очень мягкий диван"));
+            list.Add(new Product("Телевизор", 50000, "Очень крутой телевизор"));
+            list.Add(new Product("Синтезатор", 100000, ""));
+            list.Add(new Product("Говнакусок", 1, "Самый обыкновенный кусок говна"));
 
-            Product[] catalog = products.ToArray();
+            Product[] catalog = list.ToArray();
 
             return catalog;
         }
