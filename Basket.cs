@@ -4,8 +4,18 @@ using System.Text;
 
 namespace WebShop
 {
-    class Basket : Catalog
+    class Basket
     {
+        private Product[] products;
 
+        public Basket(Product[] products)
+        {
+            this.products = products;
+        }
+
+        public void ProductAdd()
+        {
+            Console.WriteLine();
+        }
     }
 }
