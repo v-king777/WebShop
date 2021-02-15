@@ -11,12 +11,8 @@ namespace WebShop
             var client1 = Client.NewClient();
 
             Catalog catalog = new Catalog();
-            var catalogContent = catalog.Content;
-            Console.WriteLine(catalogContent[0].Name);
 
-            Basket basket = new Basket();
-            var basketContent = basket.Content;
-            Console.WriteLine(basketContent[0].Name);
+            Basket basket = new Basket(catalog.Products);
 
             //client1.Print();
 
