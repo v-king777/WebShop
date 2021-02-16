@@ -8,41 +8,41 @@ namespace WebShop
         {
             Console.WriteLine("\t=== WebShop ===\n");
 
-            var client1 = Client.NewClient();
+            var client = Client.NewClient();
 
             Catalog catalog = new Catalog();
 
             Basket basket = new Basket(catalog.Products);
 
             PickPoint pickpoint = new PickPoint("Мавзолей В.И. Ленина", "Красная пл., Москва, 109012");
-            
+
             RetailShop retailShop = new RetailShop("ГУМ", "Красная пл., 3, Москва, 109012");
+
+            HomeDelivery homeDelivery = new HomeDelivery(client.Address);
+
+            PickPointDelivery pickPointDelivery = new PickPointDelivery(pickpoint.Address);
+
+            ShopDelivery shopDelivery = new ShopDelivery(retailShop.Address);
+
+            basket.ProductAdd(0);
+            basket.ProductAdd(4);
+            basket.ViewBasket();
+
+            Order order = new Order("NN-0001", basket.Content, basket.PriceSumm, client.Name, client.PhoneNumber, homeDelivery.Address);
             
-            Order<string, object[]> order1 = new Order<string, object[]>("NN-0001", basket.Content);
-            
-            order1.Print();
-            
-            //client1.Print();
+            order.Print();
 
             //catalog.ViewCatalog();
-            
-            //basket.ProductAdd(0);
-            //basket.ProductAdd(4);
-            //basket.ViewBasket();
-            
+
+            //client1.Print();
+
             //pickpoint.Print();
-            
+
             //retailShop.Print();
 
-            //HomeDelivery homeDelivery = new HomeDelivery();
-            //homeDelivery.Address = client1.Address;
+            //pickPointDelivery.DisplayAddress();
 
-            //PickPointDelivery pickPointDelivery = new PickPointDelivery();
-            //pickPointDelivery.Address = pickpoint.Address;
-
-            //ShopDelivery shopDelivery = new ShopDelivery();
-            //shopDelivery.Address = retailShop.Address;
-            
+            //shopDelivery.DisplayAddress();
         }
     }
 }
