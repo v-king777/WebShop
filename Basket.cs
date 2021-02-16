@@ -9,6 +9,11 @@ namespace WebShop
         private object[] content = new object[byte.MaxValue];
         private Product[] products;
         
+        public object[] Content
+        {
+            get { return content; }
+        }
+        
         public Basket(Product[] products)
         {
             this.products = products;
