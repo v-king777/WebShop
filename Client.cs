@@ -22,7 +22,7 @@ namespace WebShop
             get { return name; }
             set
             {
-                if (value == "" || value.Contains(" "))
+                if (value == "")
                 {
                     Console.WriteLine("Invalid name");
                 }
@@ -54,7 +54,7 @@ namespace WebShop
             get { return address; }
             set
             {
-                if (value == "" || value.Contains(" "))
+                if (value == "")
                 {
                     Console.WriteLine("Invalid address");
                 }
@@ -89,9 +89,9 @@ namespace WebShop
         {
             Console.WriteLine("\n\t< Информация о клиенте >\n");
             Console.WriteLine("Id: " + id);
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("PhoneNumber: " + phoneNumber);
-            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Имя: " + name);
+            Console.WriteLine("Номер телефона: " + phoneNumber);
+            Console.WriteLine("Адрес: " + address);
         }
     }
 }
