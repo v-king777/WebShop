@@ -4,16 +4,18 @@ using System.Text;
 
 namespace WebShop
 {
-    class Order<T>
+    class Order<T1, T2>
     {
-        private T number;
+        private T1 number;
+        private T2 content;
         
-        public Order(T number)
+        public Order(T1 number, T2 content)
         {
             this.number = number;
+            this.content = content;
         }
         
-        public T Number
+        public T1 Number
         {
             get { return number; }
         }
@@ -23,7 +25,7 @@ namespace WebShop
             Console.WriteLine("\n\t< Информация о заказе >\n");
             Console.WriteLine("Номер заказа: " + number);
             Console.WriteLine("Дата и время заказа: " + DateTime.Now);
-            Console.WriteLine("Содержание заказа: ");
+            Console.WriteLine("Содержание заказа: " + content);
             Console.WriteLine("Информация о клиенте: ");
             Console.WriteLine("Информация о доставке: ");
         }
