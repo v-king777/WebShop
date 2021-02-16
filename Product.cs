@@ -16,20 +16,21 @@ namespace WebShop
             {
                 throw new Exception("Invalid name");
             }
-            
+
             if (price <= 0)
             {
                 throw new Exception("Invalid price");
             }
-            
+
             if (description == "")
             {
-                this.description = "No description";
+                this.description = "Нет описания";
             }
             else
             {
                 this.description = description;
             }
+
             this.name = name;
             this.price = price;
         }
