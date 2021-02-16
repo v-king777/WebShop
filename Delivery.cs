@@ -7,30 +7,37 @@ namespace WebShop
     abstract class Delivery
     {
         public string Address { get; set; }
-        public abstract void Run();
+        
+        public virtual void DisplayAddress()
+        {
+            Console.Write("Доставка ");
+        }
     }
 
     class HomeDelivery : Delivery
     {
-        public override void Run()
+        public override void DisplayAddress()
         {
-            Console.WriteLine("Выполняется доставка на дом по адресу: " + Address);
+            base.DisplayAddress();
+            Console.WriteLine("на дом по адресу: " + Address);
         }
     }
 
     class PickPointDelivery : Delivery
     {
-        public override void Run()
+        public override void DisplayAddress()
         {
-            Console.WriteLine("Выполняется доставка в пункт выдачи по адресу: " + Address);
+            base.DisplayAddress();
+            Console.WriteLine("в пункт выдачи по адресу: " + Address);
         }
     }
 
     class ShopDelivery : Delivery
     {
-        public override void Run()
+        public override void DisplayAddress()
         {
-            Console.WriteLine("Выполняется доставка в магазин по адресу: " + Address);
+            base.DisplayAddress();
+            Console.WriteLine("в магазин по адресу: " + Address);
         }
     }
 }
