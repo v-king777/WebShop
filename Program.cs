@@ -14,23 +14,35 @@ namespace WebShop
 
             Basket basket = new Basket(catalog.Products);
 
-            basket.ProductAdd(0);
-
+            PickPoint pickpoint = new PickPoint("Мавзолей В.И. Ленина", "Красная пл., Москва, 109012");
+            
+            RetailShop retailShop = new RetailShop("ГУМ", "Красная пл., 3, Москва, 109012");
+            
+            Order<string, object[]> order1 = new Order<string, object[]>("NN-0001", basket.Content);
+            
+            order1.Print();
+            
             //client1.Print();
 
-            //Catalog.ViewCatalog();
+            //catalog.ViewCatalog();
+            
+            //basket.ProductAdd(0);
+            //basket.ProductAdd(4);
+            //basket.ViewBasket();
+            
+            //pickpoint.Print();
+            
+            //retailShop.Print();
 
             //HomeDelivery homeDelivery = new HomeDelivery();
             //homeDelivery.Address = client1.Address;
-            //homeDelivery.Run();
 
             //PickPointDelivery pickPointDelivery = new PickPointDelivery();
-            //pickPointDelivery.Address = client1.Address;
-            //pickPointDelivery.Run();
+            //pickPointDelivery.Address = pickpoint.Address;
 
             //ShopDelivery shopDelivery = new ShopDelivery();
-            //shopDelivery.Address = client1.Address;
-            //shopDelivery.Run();
+            //shopDelivery.Address = retailShop.Address;
+            
         }
     }
 }
