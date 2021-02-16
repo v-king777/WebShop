@@ -8,15 +8,26 @@ namespace WebShop
     {
         private object[] content = new object[byte.MaxValue];
         private Product[] products;
-        
+        private double priceSumm;
+
+        public Basket(Product[] products)
+        {
+            this.products = products;
+        }
+
+        public Product[] Products
+        {
+            get { return products; }
+        }
+
         public object[] Content
         {
             get { return content; }
         }
-        
-        public Basket(Product[] products)
+
+        public double PriceSumm
         {
-            this.products = products;
+            get { return priceSumm; }
         }
 
         public void ProductAdd(int indexOfProduct)
@@ -30,23 +41,23 @@ namespace WebShop
                 }
             }
         }
-        
+
         public void ViewBasket()
         {
             Console.WriteLine("\n\t< Корзина >\n");
-            
-            double summPrice = 0;
-            
+
+            priceSumm = 0;
+
             foreach (Product product in content)
             {
                 if (product != null)
                 {
                     Console.WriteLine("{0}. Цена {1} руб.", product.Name, product.Price);
-                    summPrice = summPrice + product.Price;
+                    priceSumm += product.Price;
                 }
             }
-            
-            Console.WriteLine("\nСумма к оплате: {0} руб.", summPrice);
+
+            Console.WriteLine("\nТоваров на сумму: {0} руб.", priceSumm);
         }
     }
 }
